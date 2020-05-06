@@ -90,6 +90,7 @@ def mask2data():
             data = pickle.load(f)
         return data
     train_mask = pd.read_csv('../data/raw/train-rle.csv')
+    print(train_mask)
     #img_id_exist_list = [f.split('/')[-1][:-4] for f in glob.glob('data/processed/train/*')]
     grp = train_mask.groupby('ImageId')#so image id is unique, some have multiple-masks to combine
     data = []
