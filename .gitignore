@@ -21,5 +21,8 @@ bin-release/
 data/*
 __pycache__
 *.ipynb_checkpoints/*
-
 *__pycache__
+checkpoint/UNetResNet34_256_v1_seed2018/best.pth.tar
+checkpoint/UNetResNet34_256_v1_seed2018/last.pth.tar
+pytorch-base/img/.ipynb_checkpoints/common_mistakes-checkpoint.png
+logging/UNetResNet34_256_v1_seed2018.log

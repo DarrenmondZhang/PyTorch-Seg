@@ -173,13 +173,14 @@ if __name__ == "__main__":
     MODEL = 'UNetResNet34'
     print('====MODEL ACHITECTURE: %s===='%MODEL)
 
-    device = set_n_get_device("0", data_device_id="cuda:0")#use the first GPU
-    multi_gpu = None #[0,1] use 2 gpus; None single gpu
+    device = set_n_get_device("0, 1, 2, 3, 4, 5, 6, 7", data_device_id="cuda:0")#use the first GPU
+    # multi_gpu = None #[0,1] use 2 gpus; None single gpu
+    multi_gpu = [0, 1, 3, 4, 5, 7]
 
-    debug = True # if True, load 100 samples, False
+    debug = False # if True, load 100 samples, False
     IMG_SIZE = 256 #1024#768#512#256
-    BATCH_SIZE = 2
-    GradientAccStep = 1
+    BATCH_SIZE = 64  
+    GradientAccStep = 1  # 梯度累积参数
     NUM_WORKERS = 4
     
     warm_start, last_checkpoint_path = False, '../checkpoint/%s_%s_v1_seed%s/best.pth.tar'%(MODEL, IMG_SIZE, SEED)

@@ -88,7 +88,7 @@ def run_check_net(train_dl, val_dl, multi_gpu=[0, 1]):
             train_metric_list.append(_train_metric.item())
 
             #grandient accumulation step=2
-            acc_step = 1
+            acc_step = 1  # 调整该参数，梯度累积
             _train_loss = _train_loss / acc_step
             _train_loss.backward()
             if (i+1)%acc_step==0:
